@@ -4,7 +4,7 @@
    width: 100%;
    margin: 0;
    background-color: #A9BCF5;
-   height:120px;
+   height:140px;
    left: 0px;
    margin-left: 0;
    z-index:2000;
@@ -13,12 +13,32 @@
 
 #mainpage-container{
    position: absolute;
-   top: 120px;
-   margin-top: 120px;
+   top: 140px;
+   margin-top: 140px;
    width: 100%;
    margin: 0;
    background-color: #FAFAFA;
    height:100%;
    left: 0px;
    margin-left: 0;
+}
+
+#mainpage-text {
+  padding: 10px 50px;
+}
+
+a {
+  width: 40px;
+  margin: 10px;
+}
+
+#header-links {
+
+}
+
+#main-link, #doctor-link, #help-link {
+  display: inline;
+  margin: 10px;
+  font-family: cursive;
+  font-size: 22px;
 }
