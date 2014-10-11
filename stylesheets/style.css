@@ -1,5 +1,5 @@
-#header-container{
-   position: fixed;
+/*#header-container{
+   position: absolute;
    top: 0;
    width: 100%;
    margin: 0;
@@ -9,48 +9,71 @@
    margin-left: 0;
    z-index:2000;
    text-align: center;
+}*/
+
+body {
+  background-image: url('/resources/heureka.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:contain;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #mainpage-container{
    position: absolute;
-   top: 140px;
-   margin-top: 140px;
+   top: 50px;
+   margin-top: 50px;
    width: 100%;
    margin: 0;
-   background-color: #FAFAFA;
-   height:80%;
+   /*background-color: #FAFAFA;*/
+   height: 100%;
+   display: block;
    left: 0px;
    margin-left: 0;
 }
 
-.mainpage-text {
+.mainpage-text, .doctor-text, .help-text {
   padding: 10px 50px;
   white-space:pre-line;
+  background-color: #D8D8D8;
+  opacity: 0.8;
 }
 
-.doctor-text {
-  padding: 10px 50px;
-  white-space:pre-line;
-}
-
-.help-text {
-  padding: 10px 50px;
-  white-space:pre-line;
-}
 
 a {
   width: 40px;
   margin: 10px;
+  text-decoration: none;
 }
 
-#header-links {
-
+.header-links {
+   position: fixed;
+   top: 0px;
+   width: 100%;
+   background-color: #A9BCF5;
+   /*height: 50px;*/
+   left: 0px;
+   margin-left: 0;
+   z-index:2000;
+   text-align: center;
+   opacity: 0.9;
 }
 
-#main-link, #doctor-link, #help-link {
+.main-link, .doctor-link, .help-link {
   display: inline;
   margin: 10px;
   font-family: cursive;
   font-size: 22px;
   cursor: pointer;
+}
+
+.active {
+ background-color: #CED8F6;
+}
+
+#mainpage-main-container, #mainpage-doctor-container, #mainpage-help-container {
+  padding: 10px 10px;
 }

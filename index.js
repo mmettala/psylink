@@ -15,6 +15,7 @@ app.set('view engine', 'jade');
 app.use(express.bodyParser());
 app.use("/stylesheets", express.static(__dirname + '/stylesheets'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
+app.use("/resources", express.static(__dirname + '/resources'));
 
 
 var mongoHost = 'localHost';
