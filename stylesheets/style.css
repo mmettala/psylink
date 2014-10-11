@@ -22,13 +22,26 @@ body {
    font-size: 18px;
 }
 
-.mainpage-text, .doctor-text, .search-text {
+
+.mainpage-text {
+  padding: 10px 50px;
+  white-space:pre-line;
+  background-color: #D8D8D8;
+  opacity: 0.8;
+  font-size: 42px;
+  color: #642EFE;
+}
+
+.doctor-text, .search-text {
   padding: 10px 50px;
   white-space:pre-line;
   background-color: #D8D8D8;
   opacity: 0.8;
 }
 
+.client-description {
+  font-size: 32px;
+}
 
 a.main-link, a.doctor-link, a.search-link {
   display: inline-block;
