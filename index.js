@@ -1,3 +1,5 @@
+// based on http://www.raywenderlich.com/61078/write-simple-node-jsmongodb-web-service-ios-app
+
 var http = require('http'),
     express = require('express'),
     path = require('path'),
