@@ -97,13 +97,20 @@ app.post('/data/:collection', function(req, res) {
     });
 });
 
-app.post('/do_insert', function(req, res){ //Server returns JSON from somewhere if the path is /data/insert
-    var form = req.body;//,
+app.post('/insert_user', function(req, res){ //Server returns JSON from somewhere if the path is /data/insert
+    var form = req.body,
+    ownSex = form.male == "on"? "Male":"Female",
     user = u.create_user(form.name,
 			 form.age,
-			 form.male == "on"? "male":"female",
-			 [form.answer, true, form.doctorSex],
-			 form.pwd);
+			 ownSex,
+			 [form.answer, form.doctorSex == "Doesn't matter"? 0:
+			               form.doctorSex == ownSex? 1: 2,
+			  form.doctorAge == "30-40"? 3:
+			  form.doctorAge == "40-50"? 4:5,
+			  form.ocd == "on"? 2:0,
+			  form.depression == "on"? 2:0,
+			  form.ocd2 == "on"? 2:0,
+			  form.ocd3 == "on"? 2:0], "")
 
     u.save_user(user, function(success)
 		{
