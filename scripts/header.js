@@ -1,6 +1,8 @@
 $(document).ready(function(){
+  $(this).scrollTop(0);
+
   $('.header-menu').smint({
-    'scrollSpeed' : 1000
+    'scrollSpeed' : 800
   });
 
 });
