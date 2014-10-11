@@ -55,6 +55,11 @@ app.get('/register', function(req, res){
     res.render('questionnaire');
 });
 
+
+app.post('/search', function(req, res){
+    res.render('searchresults');
+});
+
 app.get('/admin', function(req, res){
     res.render('admin');
 });
