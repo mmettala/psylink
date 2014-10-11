@@ -21,7 +21,7 @@ body {
    margin-left: 0;
 }
 
-.mainpage-text, .doctor-text, .help-text {
+.mainpage-text, .doctor-text, .search-text {
   padding: 10px 50px;
   white-space:pre-line;
   background-color: #D8D8D8;
@@ -29,7 +29,7 @@ body {
 }
 
 
-a.main-link, a.doctor-link, a.help-link {
+a.main-link, a.doctor-link, a.search-link {
   display: inline-block;
   height: 35px;
   width: 10%;
@@ -53,7 +53,7 @@ a.main-link, a.doctor-link, a.help-link {
    opacity: 0.9;
 }
 
-.main-link, .doctor-link, .help-link {
+.main-link, .doctor-link, .search-link {
   display: inline;
   font-size: 22px;
   cursor: pointer;
@@ -71,6 +71,18 @@ a:hover {
  background-color: #E0E0F8;
 }
 
-#mainpage-main-container, #mainpage-doctor-container, #mainpage-help-container {
+#mainpage-main-container, #mainpage-doctor-container, #mainpage-search-container {
   padding: 10px 10px;
+}
+
+.search {
+  padding:6px 15px 6px 30px;
+  margin:3px;
+  /*background: url('./images/search.png') no-repeat 8px 6px;*/
+}
+
+.rounded {
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
 }
