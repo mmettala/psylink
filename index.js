@@ -35,8 +35,6 @@ mongoClient.open(function(err, mongoClient) {
     u.register_db(collectionDriver);
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.get('/', function(req, res){
     res.render('frontpage');
