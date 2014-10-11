@@ -26,8 +26,8 @@ var collectionDriver;
 var mongoClient = new MongoClient(new Server(mongoHost, mongoPort));
 mongoClient.open(function(err, mongoClient) {
     if (!mongoClient) {
-	console.error("Error! Exiting... Must start MongoDB first");
-	process.exit(1);
+    	console.error("Error! Exiting... Must start MongoDB first");
+    	process.exit(1);
     }
     var db = mongoClient.db("MyDatabase");
     collectionDriver = new CollectionDriver(db);
@@ -70,7 +70,7 @@ app.get('/data/:collection', function(req, res) {
             if (req.accepts('html')) {
                 res.render('data',{objects: objs, collection: req.params.collection});
             } else {
-		res.set('Content-Type','application/json');
+		            res.set('Content-Type','application/json');
                 res.send(200, objs);
             }
         }
@@ -82,12 +82,12 @@ app.get('/data/:collection/:entity', function(req, res) {
     var entity = params.entity;
     var collection = params.collection;
     if (entity) {
-	collectionDriver.get(collection, entity, function(error, objs) {
-            if (error) { res.send(400, error); }
-            else { res.send(200, objs); }
-	});
+    	collectionDriver.get(collection, entity, function(error, objs) {
+                if (error) { res.send(400, error); }
+                else { res.send(200, objs); }
+    	});
     } else {
-	res.send(400, {error: 'bad url', url: req.url});
+      res.send(400, {error: 'bad url', url: req.url});
     }
 });
 
@@ -129,13 +129,13 @@ app.put('/data/:collection/:entity', function(req, res) {
     var entity = params.entity;
     var collection = params.collection;
     if (entity) {
-	collectionDriver.update(collection, req.body, entity, function(error, objs) {
-            if (error) { res.send(400, error); }
-            else { res.send(200, objs); }
-	});
+    	collectionDriver.update(collection, req.body, entity, function(error, objs) {
+                if (error) { res.send(400, error); }
+                else { res.send(200, objs); }
+    	});
     } else {
-	var error = { "message" : "Cannot PUT a whole collection" };
-	res.send(400, error);
+    	var error = { "message" : "Cannot PUT a whole collection" };
+    	res.send(400, error);
     }
 });
 
@@ -144,13 +144,13 @@ app.delete('/data/:collection/:entity', function(req, res) {
     var entity = params.entity;
     var collection = params.collection;
     if (entity) {
-	collectionDriver.delete(collection, entity, function(error, objs) {
-            if (error) { res.send(400, error); }
-            else { res.send(200, objs); }
-	});
+    	collectionDriver.delete(collection, entity, function(error, objs) {
+                if (error) { res.send(400, error); }
+                else { res.send(200, objs); }
+    	});
     } else {
-	var error = { "message" : "Cannot DELETE a whole collection" };
-	res.send(400, error);
+    	var error = { "message" : "Cannot DELETE a whole collection" };
+    	res.send(400, error);
     }
 });
 
