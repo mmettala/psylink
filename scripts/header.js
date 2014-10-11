@@ -5,4 +5,9 @@ $(document).ready(function(){
     'scrollSpeed' : 800
   });
 
+  $('.go-back').click(function(evt){
+      parent.history.back();
+      evt.stopPropagation();
+  });
+
 });

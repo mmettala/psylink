@@ -19,6 +19,7 @@ body {
    display: block;
    left: 0px;
    margin-left: 0;
+   font-size: 18px;
 }
 
 .mainpage-text, .doctor-text, .search-text {
@@ -38,6 +39,10 @@ a.main-link, a.doctor-link, a.search-link {
   padding: 15px 2% 0 2%;
   text-align: center;
   /*color: #fff;*/
+}
+
+a.go-back {
+  float: left;
 }
 
 .header-links {

@@ -39,6 +39,15 @@ app.get('/', function(req, res){
   res.render('frontpage');
 });
 
+app.get('/ptprofiles', function(req, res){
+  res.render('ptprofiles');
+});
+
+app.get('/register-client', function(req, res){
+  res.render('clientprofile');
+});
+
+
 app.get('/admin', function(req, res){
   res.render('admin');
 });
