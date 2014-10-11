@@ -13,6 +13,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.bodyParser());
+app.use("/stylesheets", express.static(__dirname + '/stylesheets'));
+
 
 var mongoHost = 'localHost';
 var mongoPort = 27017;
