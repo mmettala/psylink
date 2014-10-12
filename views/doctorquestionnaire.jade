@@ -2,7 +2,7 @@ body
   h1 Please fill the questionnaire
 
   div
-  form(action='/insert_user', method='post')
+  form(action='/insert_doctor', method='post')
     div
       label(for='name') Name
         input(id='name', type='text', name='name')
@@ -19,23 +19,16 @@ body
       label(for='female') Female
         input(type='radio', value='female', name='sex')
     div
-      label(for='answer') WTF
-        textarea(name='answer', type='text', placeholder='TTF')
-    div
-      label(for="doctorSex") Doctor's sex? <!--emacs' syntax-colouring sucks-->
-        select(name='doctorSex')
-          option Male
-          option Female
-          option Doesn't matter<!--'-->
-    div
-      label(for='doctorAge') Doctor's age group? <!--'-->
-        select(name="doctorAge")
-          option 30-40
+      label(for='patientAge') Ideal age group?
+        select(name="patientAge")
+          option 00-10
+          option 20-30
           option 40-50
-          option 50-60
+          option 60-70
+          option Older
 
     div
-      p() Doctor's specialties <!-- ' -->
+      p() Your specialties 
         label(for="doctorSpecialties") OCD
           input(type="checkbox", name="ocd") 
         label(for="depression") Depression

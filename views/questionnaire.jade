@@ -3,6 +3,7 @@ body
 
   div
   form(action='/insert_user', method='post')
+    input(type="hidden", name="collection", value="users")
     div
       label(for='name') Name
         input(id='name', type='text', name='name')
@@ -13,38 +14,83 @@ body
       label(for='birthdate') Birthdate as YYYYMMDD if date-picker is broken
       br
       input(type='date', name='birthdate')
-    div
-      label(for='male') Male
-        input(type='radio', value='male', name='sex')
-      label(for='female') Female
-        input(type='radio', value='female', name='sex')
-    div
-      label(for='answer') WTF
-        textarea(name='answer', type='text', placeholder='TTF')
-    div
-      label(for="doctorSex") Doctor's sex? <!--emacs' syntax-colouring sucks-->
-        select(name='doctorSex')
-          option Male
-          option Female
-          option Doesn't matter<!--'-->
-    div
-      label(for='doctorAge') Doctor's age group? <!--'-->
-        select(name="doctorAge")
-          option 30-40
-          option 40-50
-          option 50-60
 
     div
-      p() Doctor's specialties <!-- ' -->
-        label(for="doctorSpecialties") OCD
-          input(type="checkbox", name="ocd") 
-        label(for="depression") Depression
-          input(type="checkbox", name="depression") 
-        label(for="ocd2") OCD2
-          input(type="checkbox", name="ocd2") 
-        label(for="ocd3") OCD3
-          input(type="checkbox", name="ocd3") 
-          
+      p Looking in doctor
+      div
+        label(for="doctorSex") Sex
+          select(name ='doctorSex')
+            option Male
+            option Female
+            option Doesn't matter<!--'-->
+      div
+        label() Field of psychotherapy
+        div
+          label(for="Cognitive") Cognitive
+            input(type="checkbox", name="Cognitive")
+        div
+          label(for="Psychodynamic") Psychodynamic
+            input(type="checkbox", name="Psychodynamic")
+        div
+          label(for="Behavioral") Behavioral
+            input(type="checkbox", name="Behavioral")
+        div
+          label(for="Interpersonal") Interpersonal
+            input(type="checkbox", name="Interpersonal")
+        div
+          label(for="Gestalt") Gestalt
+            input(type="checkbox", name="Gestalt")
+            
+        div
+          p Background
+          div
+            label(for="Psychiatrist (medical doctor)") Psychiatrist (medical doctor)
+              input(type="checkbox", name="Psychiatrist (medical doctor)")
+          div
+            label(for="Psychologist") Psychologist
+              input(type="checkbox", name="Psychologist")
+    div
+      p Personality
+      div
+        span Reserved
+        input(type="range", min=0, max=100, value=50, name="reserved")
+        span Outgoing
+      div
+        span Considered
+        input(type="range", min=0, max=100, value=50, name="considered")
+        span Impulsive
+      div In a group of people
+        div
+          span You feel an outsider [with known people]
+          input(type="range", min=0, max=100, value=50, name="outsider")
+          span [with unknown people]
+          input(type="range", min=0, max=100, value=50, name="outsider")
+        div
+          span You appoint yourself as a director [with known people]
+          input(type="range", min=0, max=100, value=50, name="leader_appointedness")
+          span [with unknown people]
+          input(type="range", min=0, max=100, value=50, name="leader_appointedness")
+
+      div Values
+        div Family comes first
+          input(type="range", min=0, max=100, value=50, name="family_first")
+        div You should do (as a job) what you love most
+          input(type="range", min=0, max=100, value=50, name="love_job")
+        div Success is achieved, not given
+          input(type="range", min=0, max=100, value=50, name="achivied_success")
+
+      div Expectations
+        label(for="Health") Health
+          input(type="checkbox", name="Health")
+        label(for="Restored work ability") Restored work ability
+          input(type="checkbox", name="Restored work ability")
+        label(for="Acceptance and managment of your situation") Acceptance and managment of your situation
+          input(type="checkbox", name="Acceptance and managment of your situation")
+        label(for="Better relationships") Better relationships
+          input(type="checkbox", name="Better relationships")
+        label(for="Resources to tackle the challenges in life") Resources to tackle the challenges in life
+          input(type="checkbox", name="Resources to tackle the challenges in life")
+        
           
     input(type='submit', value='Submit')
-        
+      

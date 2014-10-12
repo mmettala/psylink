@@ -1,0 +1,36 @@
+* Looking in doctor [Checkboxes]
+- Sex
+  - Male
+  - Female
+- Field of psychotherapy
+  - Cognitive
+  - Psychodynamic
+  - Behavioral
+  - Interpersonal
+  - Gestalt
+- Backgroud
+  - Psychiatrist (medical doctor)
+  - Psychologist
+
+* Personality
+
+- Reserved-outgoing [0..1]
+- Considered-impulsive [0..1]
+** In a Group of people [known people] [unknown people]
+   - You feel an outsider [0..1] [0..1]
+   - You appoint yourself as a director [0..1] [0..1]
+   - You thrive on discussion [0..1] [0..1]
+* Values [Agree..Disagree]
+- Family comes first [0..1]
+- You should do (as a job) what you love the most [0..1]
+- Success is achieved, not given [0..1]
+
+* Expectations [Checkboxes]
+- Health
+- Restored work ability
+- Acceptance and managment of your situation
+- Better relationships
+- Resources to tackle the challenges in life
+
+
+   

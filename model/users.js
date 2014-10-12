@@ -5,7 +5,7 @@ exports.register_db = function (connectiondriver)
     db = connectiondriver;
 };
 
-exports.create_user = function(name, age, sex, answers, pwd)
+exports.create_user = function(sex, male, female, age, sex, pwd, answers)
 {
     return {name: name,
 	    age: age,

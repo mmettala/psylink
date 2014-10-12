@@ -55,6 +55,10 @@ app.get('/register', function(req, res){
     res.render('questionnaire');
 });
 
+app.get('/register-doctor', function(req, res){
+    res.render('doctorquestionnaire');
+});
+
 app.get('/admin', function(req, res){
     res.render('admin');
 });
@@ -97,30 +101,30 @@ app.post('/data/:collection', function(req, res) {
     });
 });
 
+function extractRecipientSex(form)
+{
+    return form.male == "on"? "Male":"Female";
+}
+
+function getYear(iso8061)
+{
+    return Number(iso8061.match(/^\d{4}/)[0]);
+}
+
 app.post('/insert_user', function(req, res){ //Server returns JSON from somewhere if the path is /data/insert
-    var form = req.body,
-    ownSex = form.male == "on"? "Male":"Female",
-    user = u.create_user(form.name,
-			 form.age,
-			 ownSex,
-			 [form.answer, form.doctorSex == "Doesn't matter"? 0:
-			               form.doctorSex == ownSex? 1: 2,
-			  form.doctorAge == "30-40"? 3:
-			  form.doctorAge == "40-50"? 4:5,
-			  form.ocd == "on"? 2:0,
-			  form.depression == "on"? 2:0,
-			  form.ocd2 == "on"? 2:0,
-			  form.ocd3 == "on"? 2:0], "")
 
-    u.save_user(user, function(success)
-		{
-		    if(success) res.send(200, "Success!")
-		    else res.send(400, "Failure!");
-		});
+    req.body.name = req.body.name[0];
 
-    //res.send(200, "Hello "+req.body.name+"! Your text is "+req.body.answer);
+    console.log(req.body);
+
+    //Never do this IRL
+    collectionDriver.save(req.body.collection, req.body, function(err, docs){
+	if (err) { res.send(400, err); }
+        else { res.send(201, docs); }
+    });
 });
-
+    
+   
 app.put('/data/:collection/:entity', function(req, res) {
     var params = req.params;
     var entity = params.entity;
