@@ -18,8 +18,13 @@ $(document).ready(function(){
     $('#try-now-div').hide();
   });
 
+
+
   $('#search-now-div').click(function(evt){
     $('#questions-form').slideUp();
+    $.getJSON( "api/Users", function( data ) {
+        console.log(data);
+    });
     $('#search-results-div').slideDown();
     $('#search-now-div').hide();
     $('#search-again-div').slideDown();
@@ -34,8 +39,16 @@ $(document).ready(function(){
 
 
 
+  $('#personal-details-label').click(function(evt){
+    $('#personal-details-div').slideDown();
+    $('#personality-div').slideUp();
+    $('#preferences-div').slideUp();
+    $('#values-div').slideUp();
+    $('#expectations-div').slideUp();
+  });
 
   $('#personality-label').click(function(evt){
+    $('#personal-details-div').slideUp();
     $('#personality-div').slideDown();
     $('#preferences-div').slideUp();
     $('#values-div').slideUp();
@@ -43,6 +56,7 @@ $(document).ready(function(){
   });
 
   $('#preferences-label').click(function(evt){
+    $('#personal-details-div').slideUp();
     $('#preferences-div').slideDown();
     $('#personality-div').slideUp();
     $('#values-div').slideUp();
@@ -50,6 +64,7 @@ $(document).ready(function(){
   });
 
   $('#values-label').click(function(evt){
+    $('#personal-details-div').slideUp();
     $('#values-div').slideDown();
     $('#personality-div').slideUp();
     $('#preferences-div').slideUp();
@@ -57,6 +72,7 @@ $(document).ready(function(){
   });
 
   $('#expectations-label').click(function(evt){
+    $('#personal-details-div').slideUp();
     $('#expectations-div').slideDown();
     $('#personality-div').slideUp();
     $('#preferences-div').slideUp();

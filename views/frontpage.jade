@@ -39,54 +39,125 @@ body
             | Try Now!
           form(action="/search", method="post", id="questions-form")
             div(id="personal-details-label")
-              label Personal Details
+              label Basic information
             div(id="personal-details-div")
               input(type="text",placeholder="username")
               input(type="password",placeholder="password")
-
-            div(id="personality-label")
-              label Personality
-            div(id="personality-div", class="personality")
-              div
-                | Question 1
-              select
-                option Answer 1
-                option Answer 2
-                option Answer 3
-                option Answer 4
 
             div(id="preferences-label")
               label Preferences
             div(id="preferences-div", class="preferences")
               div
-                | Question 2
+                | Sex
               select
-                option Answer 1
-                option Answer 2
-                option Answer 3
-                option Answer 4
+                option Male
+                option Female
+              div
+                | Field of psychotherapy
+              select
+                option Cognitive
+                option Psychodynamic
+                option Behavioral
+                option Interpersonal
+                option Gestalt
+              div
+                | Background
+              select
+                option Psychiatrist (medical doctor)
+                option Psychologist
+
+            div(id="personality-label")
+              label Personality
+            div(id="personality-div", class="personality")
+              h3
+                | Would you describe yourself as
+              label Reserved
+              input(type="range", max="5", min="0")
+              label Outgoing
+              br
+              label Considered
+              input(type="range", max="5", min="0")
+              label Impulsive
+
+              br
+              div(class="client-question-personality-container")
+                h3
+                  | In a group of people...
+                div(class="client-question-personality-left")
+                  h3
+                    | ... that you know
+                  div(class="client-question-personality-title")
+                    | You feel as an outsider
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  br
+                  div(class="client-question-personality-title")
+                    | You appoint your self as a director
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  br
+                  div(class="client-question-personality-title")
+                    | You thrive on discussion
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+
+                div(class="client-question-personality-right")
+                  h3
+                    | ... that are new to you
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  div
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  div
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+
+
+            div(class="clear")
 
             div(id="values-label")
               label Values
             div(id="values-div", class="values")
-              div
-                | Question 3
-              select
-                option Answer 1
-                option Answer 2
-                option Answer 3
-                option Answer 4
+              div(class="client-question-personality-left")
+                div(class="client-question-personality-title")
+                  | Family comes first
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
+                br
+                div(class="client-question-personality-title")
+                  | You should do (as a job) what you love the most
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
+                br
+                div(class="client-question-personality-title")
+                  | Success is achieved, not given
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
+
+
+            div(class="clear")
+
 
             div(id="expectations-label")
               label Expectations
             div(id="expectations-div", class="expectations")
               div
-                | Question 4
+                | What do you wish for as the outcome of your therapy?
               select
-                option Answer 1
-                option Answer 2
-                option Answer 3
-                option Answer 4
+                option Health
+                option Restored work ability
+                option Better relationships
+                option Resources to tackle the challenges in life
 
             div(class="try-now-centered", id="search-now-div")
               | Search

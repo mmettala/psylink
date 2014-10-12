@@ -62,12 +62,26 @@ app.get('/admin', function(req, res){
     res.render('admin');
 });
 
+app.get('/api/:collection', function(req, res) {
+    var params = req.params;
+    console.log(params);
+    collectionDriver.findAll(req.params.collection, function(error, objs) {
+        if (error) { res.send(400, error); }
+        else {
+            res.set('Content-Type','application/json');
+            res.send(200, objs);
+        }
+    });
+});
+
 app.get('/data/:collection', function(req, res) {
     var params = req.params;
+    console.log(params);
     collectionDriver.findAll(req.params.collection, function(error, objs) {
         if (error) { res.send(400, error); }
         else {
             if (req.accepts('html')) {
+              console.log("sadsa")
                 res.render('data',{objects: objs, collection: req.params.collection});
             } else {
 		            res.set('Content-Type','application/json');
@@ -76,6 +90,7 @@ app.get('/data/:collection', function(req, res) {
         }
     });
 });
+
 
 app.get('/data/:collection/:entity', function(req, res) {
     var params = req.params;

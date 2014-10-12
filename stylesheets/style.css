@@ -134,6 +134,47 @@ a:hover {
   font-size: 24px;
 }
 
+#personal-details-div {
+  display: none;
+}
+
+.client-question-personality-container {
+  display: block;
+  float:left;
+
+}
+
+
+.client-question-personality-left {
+  display: inline-block;
+  float:left;
+  margin-right: 50px;
+  min-width: 200px;
+}
+
+.client-question-personality-left h3 {
+  text-align: right;
+  margin-right: 55px;
+}
+
+.client-question-personality-right h3 {
+  text-align: right;
+  margin-right: 45px;
+}
+
+
+.client-question-personality-right {
+  display: inline-block;
+  float:right;
+}
+
+.client-question-personality-title {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 200px;
+}
+
 #personality-label, #preferences-label, #values-label, #expectations-label, #personal-details-label {
   font-size: 24px;
 }
