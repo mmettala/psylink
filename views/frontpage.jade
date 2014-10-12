@@ -5,95 +5,181 @@ head
   script(type='text/javascript', src='/scripts/header.js')
   script(type='text/javascript', src='/scripts/jquery.smint.js')
 
-
-
 body
-  header
-    div(id="header-container")
+  div(class="wrap")
+    div(class="section sTop")
+      div(class="inner")
+        h1(class="title") PsyLink
+        h2(class="subtitle") Find your psychotherapist
+        img(src="/resources/logo_here.png", class="top-logo")
 
-      div(class="header-menu header-links")
-        a(href="#main" class="main-link")
-          | Who are we
-        a(href="#doctors" class="doctor-link")
+    div(class="subMenu ")
+      div(class="inner")
+        a(href="#sTop" class="subNavBtn")
+          | Home
+        a(href="#main" class="subNavBtn")
+          | Who
+        a(href="#search" class="subNavBtn")
+          | Client
+        a(href="#doctors" class="subNavBtn")
           | Psychotherapists
-        a(href="#search" class="search-link")
-          | Search
-        //input(type="text", placeholder="Search", class="search")
 
-  div(id="mainpage-container")
-    div(id="mainpage-main-container" class="main")
-      h2 Introduction
-      p(class="mainpage-text").
+    div(id="mainpage-container")
+      div(id="mainpage-main-container" class="section main s1")
+        p(class="mainpage-text inner").
+         PsyLink, a service to find the best possible match between psychotherapists and their clients
+        img(src="/resources/discussion.png", class="main-section-image")
+
+      div(id="mainpage-search-container" class="section search s2")
+        div(class="search-text")
+          p(class="client-description").
+            Find a Psychotherapist with the same Chemistry as yours / who connects with you / who is your soul mate
+
+          div(class="try-now-centered", id="try-now-div")
+            | Try Now!
+          form(action="/search", method="post", id="questions-form")
+            div(id="personal-details-label")
+              label Basic information
+            div(id="personal-details-div")
+              input(type="text",placeholder="username")
+              input(type="password",placeholder="password")
+
+            div(id="preferences-label")
+              label Preferences
+            div(id="preferences-div", class="preferences")
+              div
+                | Sex
+              select
+                option Male
+                option Female
+              div
+                | Field of psychotherapy
+              select
+                option Cognitive
+                option Psychodynamic
+                option Behavioral
+                option Interpersonal
+                option Gestalt
+              div
+                | Background
+              select
+                option Psychiatrist (medical doctor)
+                option Psychologist
+
+            div(id="personality-label")
+              label Personality
+            div(id="personality-div", class="personality")
+              h3
+                | Would you describe yourself as
+              label Reserved
+              input(type="range", max="5", min="0")
+              label Outgoing
+              br
+              label Considered
+              input(type="range", max="5", min="0")
+              label Impulsive
+
+              br
+              div(class="client-question-personality-container")
+                h3
+                  | In a group of people...
+                div(class="client-question-personality-left")
+                  h3
+                    | ... that you know
+                  div(class="client-question-personality-title")
+                    | You feel as an outsider
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  br
+                  div(class="client-question-personality-title")
+                    | You appoint your self as a director
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  br
+                  div(class="client-question-personality-title")
+                    | You thrive on discussion
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+
+                div(class="client-question-personality-right")
+                  h3
+                    | ... that are new to you
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  div
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
+                  div
+                  label Agree
+                  input(type="range", max="5", min="0")
+                  label Disagree
 
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
+            div(class="clear")
 
-        Fusce id semper massa, vel pulvinar nibh. Aliquam tristique eleifend ante hendrerit interdum. Donec auctor luctus pretium. Morbi velit arcu, mollis at dui vel, tincidunt elementum elit. Nunc malesuada gravida vulputate. Aliquam erat volutpat. Vivamus in pellentesque mauris. Sed rhoncus arcu sit amet posuere facilisis. Sed sit amet odio sed arcu semper porttitor nec at leo. Suspendisse risus tortor, convallis maximus justo sit amet, elementum bibendum urna. Praesent non placerat eros. Etiam eleifend est nec lorem blandit vehicula. Nunc porttitor suscipit accumsan. Fusce consequat tellus vel quam vehicula varius. Fusce blandit est a erat aliquam, id mollis nunc pulvinar. Nullam at quam tortor.
-
-        Quisque lectus turpis, mollis et diam sit amet, commodo porttitor elit. Integer lacinia nunc a sem tincidunt, a consectetur ex lobortis. Nulla eget turpis sed urna posuere rutrum vitae vitae est. In mollis odio vitae sapien consequat, in tristique tortor pharetra. Proin volutpat sapien at molestie laoreet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent eleifend diam quis velit tincidunt pretium. Donec interdum lectus felis, at volutpat massa condimentum sit amet. Suspendisse fermentum sapien et felis blandit, vel aliquet risus faucibus.
-
-        Mauris et sem commodo, iaculis lacus sed, rutrum lorem. Praesent hendrerit sit amet ligula in bibendum. Cras sed posuere augue. Quisque nec est id tortor fermentum lobortis. Nam euismod tincidunt nibh et viverra. In nec odio sed nunc ornare viverra id ut nulla. Aenean auctor mi a metus lacinia, aliquam dignissim tortor facilisis. Quisque a mollis mi, et ornare libero. Aenean ac nibh leo. Ut tempus odio eget libero sollicitudin semper. Morbi imperdiet ante risus, vitae venenatis sem varius at. Integer tortor nunc, accumsan nec erat ut, ultricies malesuada augue. Sed ut finibus ex.
-
-        Nam pulvinar elit in ligula semper, eget fermentum ligula sodales. Suspendisse ullamcorper, nibh a fermentum ornare, ipsum dolor semper purus, eget interdum tortor nisl vel quam. Mauris quis consequat nunc. Ut vel ornare urna, non varius dolor. Ut molestie laoreet enim malesuada ultrices. Nunc pulvinar pellentesque congue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc aliquam, orci sit amet eleifend tristique, nisl turpis finibus quam, eu iaculis magna lectus et purus. Suspendisse potenti. Aliquam mollis, ex nec sagittis tincidunt, ligula nulla blandit augue, ut mollis est augue et justo. Mauris diam lorem, tempus in tincidunt non, dictum non nulla. Morbi interdum blandit mollis. Integer id sodales neque. Vivamus luctus urna ut eros sodales, dignissim molestie dolor ornare. Sed nec consectetur diam.
-
-    div(id="mainpage-doctor-container" class="doctors")
-      h2 Psychotherapists
-      p(class="doctor-text").
-
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
-
-        Fusce id semper massa, vel pulvinar nibh. Aliquam tristique eleifend ante hendrerit interdum. Donec auctor luctus pretium. Morbi velit arcu, mollis at dui vel, tincidunt elementum elit. Nunc malesuada gravida vulputate. Aliquam erat volutpat. Vivamus in pellentesque mauris. Sed rhoncus arcu sit amet posuere facilisis. Sed sit amet odio sed arcu semper porttitor nec at leo. Suspendisse risus tortor, convallis maximus justo sit amet, elementum bibendum urna. Praesent non placerat eros. Etiam eleifend est nec lorem blandit vehicula. Nunc porttitor suscipit accumsan. Fusce consequat tellus vel quam vehicula varius. Fusce blandit est a erat aliquam, id mollis nunc pulvinar. Nullam at quam tortor.
-
-        Quisque lectus turpis, mollis et diam sit amet, commodo porttitor elit. Integer lacinia nunc a sem tincidunt, a consectetur ex lobortis. Nulla eget turpis sed urna posuere rutrum vitae vitae est. In mollis odio vitae sapien consequat, in tristique tortor pharetra. Proin volutpat sapien at molestie laoreet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent eleifend diam quis velit tincidunt pretium. Donec interdum lectus felis, at volutpat massa condimentum sit amet. Suspendisse fermentum sapien et felis blandit, vel aliquet risus faucibus.
-
-        Mauris et sem commodo, iaculis lacus sed, rutrum lorem. Praesent hendrerit sit amet ligula in bibendum. Cras sed posuere augue. Quisque nec est id tortor fermentum lobortis. Nam euismod tincidunt nibh et viverra. In nec odio sed nunc ornare viverra id ut nulla. Aenean auctor mi a metus lacinia, aliquam dignissim tortor facilisis. Quisque a mollis mi, et ornare libero. Aenean ac nibh leo. Ut tempus odio eget libero sollicitudin semper. Morbi imperdiet ante risus, vitae venenatis sem varius at. Integer tortor nunc, accumsan nec erat ut, ultricies malesuada augue. Sed ut finibus ex.
-
-        Nam pulvinar elit in ligula semper, eget fermentum ligula sodales. Suspendisse ullamcorper, nibh a fermentum ornare, ipsum dolor semper purus, eget interdum tortor nisl vel quam. Mauris quis consequat nunc. Ut vel ornare urna, non varius dolor. Ut molestie laoreet enim malesuada ultrices. Nunc pulvinar pellentesque congue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc aliquam, orci sit amet eleifend tristique, nisl turpis finibus quam, eu iaculis magna lectus et purus. Suspendisse potenti. Aliquam mollis, ex nec sagittis tincidunt, ligula nulla blandit augue, ut mollis est augue et justo. Mauris diam lorem, tempus in tincidunt non, dictum non nulla. Morbi interdum blandit mollis. Integer id sodales neque. Vivamus luctus urna ut eros sodales, dignissim molestie dolor ornare. Sed nec consectetur diam.
-
-        <a href="/ptprofiles">
-          See some of our available therapists
-        </a>
-
-    div(id="mainpage-search-container" class="search")
-      h2 Search!
-      div(class="search-text")
+            div(id="values-label")
+              label Values
+            div(id="values-div", class="values")
+              div(class="client-question-personality-left")
+                div(class="client-question-personality-title")
+                  | Family comes first
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
+                br
+                div(class="client-question-personality-title")
+                  | You should do (as a job) what you love the most
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
+                br
+                div(class="client-question-personality-title")
+                  | Success is achieved, not given
+                label Agree
+                input(type="range", max="5", min="0")
+                label Disagree
 
 
-        //input(type="text", placeholder="Search", class="search")
-        form(action="/search", method="post")
-          p
-            | Question 1
-          select
-            option Answer 1
-            option Answer 2
-            option Answer 3
-            option Answer 4
-          p
-            | Question 2
-          select
-            option Answer 1
-            option Answer 2
-            option Answer 3
-            option Answer 4
-          p
-            | Question 3
-          select
-            option Answer 1
-            option Answer 2
-            option Answer 3
-            option Answer 4
-          p
-            | Question 4
-          select
-            option Answer 1
-            option Answer 2
-            option Answer 3
-            option Answer 4
-          br
-          div(style="text-align:center;")
-            input(type="submit" value="Search")
+            div(class="clear")
 
 
+            div(id="expectations-label")
+              label Expectations
+            div(id="expectations-div", class="expectations")
+              div
+                | What do you wish for as the outcome of your therapy?
+              select
+                option Health
+                option Restored work ability
+                option Better relationships
+                option Resources to tackle the challenges in life
 
+            div(class="try-now-centered", id="search-now-div")
+              | Search
+
+          div(class="search-results-container" id="search-results-div")
+            div(class="search-results-container-recommend") According to your information, we recommend you to contact
+            div(id="searchresults-main-container" class="main")
+              h2 Matti Meikäläinen
+
+              p(class="doctor-text")
+                img(src="/resources/profile.jpg")
+                br
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
+
+            div(class="try-now-centered", id="search-again-div")
+              | Search Again
+
+
+      div(id="mainpage-doctor-container" class="section doctors s3")
+        //h2 Psychotherapists
+        p(class="doctor-text inner").
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
+
+        img(src="/resources/crowd.png", class="doctors-section-image")
 
