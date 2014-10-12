@@ -146,6 +146,8 @@ a:hover {
 
 .tag-cloud-after-right {
   text-align: right;
+  font-size: 32px !important;
+  font-weight: bold !important;
 }
 
 .main-section-tag-cloud {
