@@ -2,10 +2,16 @@ doctype html
 head
   link(rel='stylesheet', href='/stylesheets/style.css')
   link(rel='stylesheet', href='/stylesheets/jqcloud.css')
+  link(rel='stylesheet', href='/stylesheets/rating.css')
+  link(rel='stylesheet', href='/stylesheets/jquery-ui.main.css')
+  link(rel='stylesheet', href='/stylesheets/jquery-ui.structure.main.css')
+  link(rel='stylesheet', href='/stylesheets/jquery-ui.theme.main.css')
   script(type='text/javascript', src='/scripts/jquery.1.11.1.min.js')
   script(type='text/javascript', src='/scripts/header.js')
   script(type='text/javascript', src='/scripts/jqcloud-1.0.3.min.js')
   script(type='text/javascript', src='/scripts/jquery.smint.js')
+  script(type='text/javascript', src='/scripts/rating.js')
+  script(type='text/javascript', src='/scripts/jquery-ui.min.js')
 
 body
   div(class="wrap")
@@ -29,11 +35,11 @@ body
     div(id="mainpage-container")
       div(id="mainpage-main-container" class="section main s1")
         p(class="mainpage-text inner").
-          Matches You with a psychotherapist who...
+          Matches You with a psychotherapist who is...
         div(id="tag-cloud", class="main-section-tag-cloud")
 
         p(class="mainpage-text inner tag-cloud-after-right").
-          ...but most importantly the right one for you!
+          ...but most importantly the right one for You!
 
       div(id="mainpage-search-container" class="section search s2")
         div(class="search-text")
@@ -171,11 +177,29 @@ body
 
               p(class="doctor-text")
                 img(src="/resources/profile.jpg")
+                div(id="recommended-profile-pic", class="rate-button-div") Rate
+                div(class="clear")
                 br
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
 
             div(class="try-now-centered", id="search-again-div")
               | Search Again
+
+          div(id="rate-main-container" class="main")
+            h2 How was your experience with Matti Meikäläinen
+              div(id="voted-thanks", class="voted-thanks") Thank you!
+              div(id="star-rating", class="inner")
+                input(type="radio" name="example" class="rating fullstar" value="1")
+                input(type="radio" name="example" class="rating fullstar" value="2")
+                input(type="radio" name="example" class="rating" value="3")
+                input(type="radio" name="example" class="rating" value="4")
+                input(type="radio" name="example" class="rating" value="5")
+
+
+
+
+
+
 
 
       div(id="mainpage-doctor-container" class="section doctors s3")

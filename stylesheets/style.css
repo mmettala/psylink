@@ -81,6 +81,14 @@ a:hover {
 
 }
 
+#star-rating {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 40px;
+  text-align: center;
+}
+
 .header-title {
   margin-left: auto;
   margin-right: auto;
@@ -91,6 +99,7 @@ a:hover {
 }
 
 #searchresults-main-container, #searchresults-doctor-container, #searchresults-search-container {
+
   padding: 10px 10px;
   height: 40%;
 }
@@ -104,6 +113,17 @@ a:hover {
   background-color: #1b83b3;
   text-align: center;
   font-size: 32px;
+}
+
+.rate-button-div {
+  display: block;
+  float: left;
+  width: 120px;
+  height: 20px;
+  background-color: #1b83b3;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 50px;
 }
 
 .main-section-image {
@@ -134,8 +154,39 @@ a:hover {
   font-size: 24px;
 }
 
+#rate-main-container {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  width: 80%;
+}
+
 #personal-details-div {
   display: none;
+}
+
+.voted-thanks {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  width: 20%;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.voted-go-back {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 20%;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
 }
 
 .client-question-personality-container {
@@ -153,7 +204,7 @@ a:hover {
 .main-section-tag-cloud {
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 80%;
   height: 250px;
 }
 
@@ -351,4 +402,8 @@ a {
 
 .s3 {
   background: #1b83b3;
+}
+
+.s4 {
+  background: #5aa3c4;
 }

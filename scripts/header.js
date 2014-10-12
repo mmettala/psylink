@@ -15,6 +15,10 @@ var word_array = [
           {text: "Acceptance", weight: 10}
       ];
 
+var goBackToSearchResults = function() {
+  $('#search-results-div').show('slide', {direction: 'left'}, 1000);
+  $('#rate-main-container').hide('slide', {direction: 'right'}, 1000);
+}
 
 $(document).ready(function(){
   $(this).scrollTop(0);
@@ -24,6 +28,8 @@ $(document).ready(function(){
   });
 
   $("#tag-cloud").jQCloud(word_array);
+
+  $('#star-rating').rating();
 
   $('.go-back').click(function(evt){
       parent.history.back();
@@ -95,5 +101,18 @@ $(document).ready(function(){
     $('#preferences-div').slideUp();
     $('#values-div').slideUp();
   });
+
+  $('#recommended-profile-pic').click(function(evt){
+    $('#search-results-div').hide('slide', {direction: 'left'}, 1000);
+    $('#rate-main-container').show('slide', {direction: 'right'}, 1000);
+  });
+
+  $('.star').click(function(evt){
+    $('.voted-thanks').show();
+    setTimeout(goBackToSearchResults, 1000);
+  });
+
+
+
 
 });
