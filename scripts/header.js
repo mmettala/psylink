@@ -39,9 +39,9 @@ $(document).ready(function(){
 
   $('#search-now-div').click(function(evt){
     $('#questions-form').slideUp();
-    $.getJSON( "api/Users", function( data ) {
+    /*$.getJSON( "api/Users", function( data ) {
         console.log(data);
-    });
+    });*/
     $('#search-results-div').slideDown();
     $('#search-now-div').hide();
     $('#search-again-div').slideDown();
