@@ -10,7 +10,9 @@ var word_array = [
           {text: "Collaborative", weight: 10},
           {text: "Empathetic", weight: 12},
           {text: "Friendly", weight: 13},
-          {text: "Person to person", weight: 10}
+          {text: "Person to person", weight: 10},
+          {text: "Patience", weight: 10},
+          {text: "Acceptance", weight: 10}
       ];
 
 
