@@ -19,7 +19,14 @@ body
 
   div(id="mainpage-container")
     div(id="searchresults-main-container" class="main")
-      h2 Matti Meikäläinen
+
+      ul
+        - doctors.forEach(function(item)
+        {
+          li= item
+        - })
+    
+      h2 Meikäläinen Matti
 
       p(class="doctor-text")
         img(src="/resources/profile.jpg")
@@ -27,21 +34,21 @@ body
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
 
     div(id="searchresults-main-container" class="main")
-      h2 Matti Meikäläinen
+      h2 Meikäläinen Matti
       p(class="doctor-text")
         img(src="/resources/profile.jpg")
         br
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
 
     div(id="searchresults-main-container" class="main")
-      h2 Matti Meikäläinen
+      h2 Meikäläinen Matti
       p(class="doctor-text")
         img(src="/resources/profile.jpg")
         br
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit elit non est dictum scelerisque. Sed rhoncus posuere condimentum. Aliquam at ligula tellus. Donec accumsan at felis at pellentesque. Phasellus vehicula nunc odio, ac hendrerit quam lacinia at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nisl nisi, porta non orci at, rutrum aliquet tellus. In interdum mi quis iaculis lobortis.
 
     div(id="searchresults-main-container" class="main")
-      h2 Matti Meikäläinen
+      h2 Meikäläinen Matti
       p(class="doctor-text")
         img(src="/resources/profile.jpg")
         br

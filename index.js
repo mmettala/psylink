@@ -56,8 +56,77 @@ app.get('/register-doctor', function(req, res){
     res.render('doctorquestionnaire');
 });
 
+function calculateScore(answers)
+{
+    return Math.sqrt(answers
+	       .map(function(x)
+		    {
+			return x*x;
+		    })
+	        .reduce(function(x,y)
+			{
+			    return x+y; 
+			}));
+}
+
+function textToNumbers(doc_user)
+{
+    return [doc_user.Cognitive ? doc_user.Cognitive == "on"? 2:1:0,
+	    doc_user.Psychodynamic ? doc_user.Psychodynamic == "on"? 2:1:0,
+	    doc_user.Behavioral ? doc_user.Behavioral == "on"? 2:1:0,
+	    doc_user.Interpersonal ? doc_user.Interpersonal == "on"? 2:1:0,
+	    doc_user.Gestalt ? doc_user.Gestalt == "on"? 2:1:0,
+	    2 * doc_user.reserved,
+	    2 * doc_user.considered,
+	    2 * doc_user.outsider[0],
+	    2 * doc_user.outsider[1],
+	    2 * doc_user.leader_appointedness[0],
+	    2 * doc_user.leader_appointedness[1],
+	    2 * doc_user.family_first,
+	    2 * doc_user.love_job,
+	    2 * doc_user.achivied_success,
+
+	    doc_user["Health"] ? doc_user["Health"] == "on"? 2:1:0,
+	    doc_user["Restored work ability"] ? doc_user["Restored work ability"] == "on"? 2:1:0,
+	    doc_user["Acceptance and managment of your situation"] ? doc_user["Acceptance and managment of your situation"] == "on"? 2:1:0,
+	    doc_user["Better relationships"] ? doc_user["Better relationships"] == "on"? 2:1:0,
+	    doc_user["Resources to tackle the challenges in life"] ? doc_user["Resources to tackle the challenges in life"] == "on"? 2:1:0];
+}
+
+Array.prototype.take = function (l) { return this.slice(0,l);}
+
 app.post('/search', function(req, res){
-    res.render('searchresults');
+    collectionDriver.findAll("doctors", function(error, allDoctors){
+	if(error){res.send(400, error); }
+	else {
+	    console.log("All doctors:");
+	    //console.log(allDoctors);
+	    var doctors = allDoctors.
+		map(function(doc)
+		     {
+			 return {doc: doc,
+				 score: calculateScore(textToNumbers(doc))};
+		     }).
+		sort(function(a,b)
+		      {
+			  return b.score-a.score;
+		      }).
+	        map(function(doc)
+		     {
+			 return doc.doc;
+		     }).
+		take(10);
+	    console.log("iojfsdijfoojis");
+	    //   console.log(doctors);
+	    
+	    // for(var i=0; i<doctors.length; i++)
+	    // {
+	    // 	console.log(doctors[i]);
+//	    }			
+			    
+	    res.render('searchresults', doctors);
+	}
+    });    
 });
 
 app.get('/admin', function(req, res){
