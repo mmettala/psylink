@@ -31,7 +31,6 @@ mongoClient.open(function(err, mongoClient) {
     }
     var db = mongoClient.db("MyDatabase");
     collectionDriver = new CollectionDriver(db);
-    console.log("collectionDriver generated #1")
     u.register_db(collectionDriver);
 });
 
@@ -55,6 +54,7 @@ app.get('/register', function(req, res){
 
 app.get('/register-doctor', function(req, res){
     res.render('doctorquestionnaire');
+});
 
 app.post('/search', function(req, res){
     res.render('searchresults');
