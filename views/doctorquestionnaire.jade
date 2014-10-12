@@ -2,7 +2,8 @@ body
   h1 Please fill the questionnaire
 
   div
-  form(action='/insert_doctor', method='post')
+  form(action='/insert_user', method='post')
+    input(type="hidden", name="collection", value="doctors")
     div
       label(for='name') Name
         input(id='name', type='text', name='name')
@@ -13,31 +14,81 @@ body
       label(for='birthdate') Birthdate as YYYYMMDD if date-picker is broken
       br
       input(type='date', name='birthdate')
-    div
-      label(for='male') Male
-        input(type='radio', value='male', name='sex')
-      label(for='female') Female
-        input(type='radio', value='female', name='sex')
-    div
-      label(for='patientAge') Ideal age group?
-        select(name="patientAge")
-          option 00-10
-          option 20-30
-          option 40-50
-          option 60-70
-          option Older
 
     div
-      p() Your specialties 
-        label(for="doctorSpecialties") OCD
-          input(type="checkbox", name="ocd") 
-        label(for="depression") Depression
-          input(type="checkbox", name="depression") 
-        label(for="ocd2") OCD2
-          input(type="checkbox", name="ocd2") 
-        label(for="ocd3") OCD3
-          input(type="checkbox", name="ocd3") 
-          
+      p What are you looking in a patient?
+      div
+        label(for="patientSex") Sex
+          select(name ='patientSex')
+            option Male
+            option Female
+            option Doesn't matter<!--'-->
+      div
+        label() Patient's field-of-problem <!--'-->
+        div
+          label(for="Cognitive") Cognitive
+            input(type="checkbox", name="Cognitive")
+        div
+          label(for="Psychodynamic") Psychodynamic
+            input(type="checkbox", name="Psychodynamic")
+        div
+          label(for="Behavioral") Behavioral
+            input(type="checkbox", name="Behavioral")
+        div
+          label(for="Interpersonal") Interpersonal
+            input(type="checkbox", name="Interpersonal")
+        div
+          label(for="Gestalt") Gestalt
+            input(type="checkbox", name="Gestalt")
+    div
+      p Patient's Personality <!-- ' -->
+      // The range-options suck in the doctor-view...
+      div
+        span Reserved
+        input(type="range", min=0, max=100, value=50, name="reserved")
+        span Outgoing
+      div
+        span Considered
+        input(type="range", min=0, max=100, value=50, name="considered")
+        span Impulsive
+      div In a group of people
+        div
+          span Patient feels an outsider [with known people]
+          input(type="range", min=0, max=100, value=50, name="outsider")
+          span [with unknown people]
+          input(type="range", min=0, max=100, value=50, name="outsider")
+        div
+          span Patient appoints themself as a director [with known people]
+          input(type="range", min=0, max=100, value=50, name="leader_appointedness")
+          span [with unknown people]
+          input(type="range", min=0, max=100, value=50, name="leader_appointedness")
+
+      div Patient's Values <!-- '-->
+        div Family comes first
+          input(type="range", min=0, max=100, value=50, name="family_first")
+        div Patient should do (as a job) what you love most
+          input(type="range", min=0, max=100, value=50, name="love_job")
+        div Success is achieved, not given
+          input(type="range", min=0, max=100, value=50, name="achivied_success")
+
+      div
+        p Patient's Expectations <!--'-->
+        div
+          label(for="Health") Health
+            input(type="checkbox", name="Health")
+        div
+          label(for="Restored work ability") Restored work ability
+            input(type="checkbox", name="Restored work ability")
+        div
+          label(for="Acceptance and managment of your situation") Acceptance and managment of your situation
+            input(type="checkbox", name="Acceptance and managment of your situation")
+        div
+          label(for="Better relationships") Better relationships
+            input(type="checkbox", name="Better relationships")
+        div
+          label(for="Resources to tackle the challenges in life") Resources to tackle the challenges in life
+            input(type="checkbox", name="Resources to tackle the challenges in life")
+        
           
     input(type='submit', value='Submit')
-        
+      

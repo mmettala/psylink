@@ -3,3 +3,4 @@ node_modules/
 /model/users.js~
 /views/questionnaire.jade~
 /patient-questions.org~
+/views/doctorquestionnaire.jade~
