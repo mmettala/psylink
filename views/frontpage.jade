@@ -1,8 +1,10 @@
 doctype html
 head
   link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/jqcloud.css')
   script(type='text/javascript', src='/scripts/jquery.1.11.1.min.js')
   script(type='text/javascript', src='/scripts/header.js')
+  script(type='text/javascript', src='/scripts/jqcloud-1.0.3.min.js')
   script(type='text/javascript', src='/scripts/jquery.smint.js')
 
 body
@@ -27,14 +29,11 @@ body
     div(id="mainpage-container")
       div(id="mainpage-main-container" class="section main s1")
         p(class="mainpage-text inner").
-         PsyLink, a service to find the best possible match between psychotherapists and their clients
-        img(src="/resources/discussion.png", class="main-section-image")
+          Matches You with a therapist who...
+        div(id="tag-cloud", class="main-section-tag-cloud")
 
       div(id="mainpage-search-container" class="section search s2")
         div(class="search-text")
-          p(class="client-description").
-            Find a Psychotherapist with the same Chemistry as yours / who connects with you / who is your soul mate
-
           div(class="try-now-centered", id="try-now-div")
             | Try Now!
           form(action="/search", method="post", id="questions-form")

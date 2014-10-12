@@ -144,6 +144,13 @@ a:hover {
 
 }
 
+.main-section-tag-cloud {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 200px;
+}
+
 
 .client-question-personality-left {
   display: inline-block;

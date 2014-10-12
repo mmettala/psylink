@@ -1,5 +1,17 @@
 var lastScrollTop = 0;
 
+var word_array = [
+          {text: "Who is your companion", weight: 10},
+          {text: "Trusted advisor", weight: 15},
+          {text: "Has the same chemistry", weight: 6},
+          {text: "Professional", weight: 20},
+          {text: "Easy to talk to", weight: 5},
+          {text: "Understands you", weight: 8},
+          {text: "Collaborative", weight: 5},
+          {text: "Empathetic", weight: 7}
+          // ...as many words as you want
+      ];
+
 
 $(document).ready(function(){
   $(this).scrollTop(0);
@@ -7,6 +19,8 @@ $(document).ready(function(){
   $('.subMenu').smint({
     'scrollSpeed' : 800
   });
+
+  $("#tag-cloud").jQCloud(word_array);
 
   $('.go-back').click(function(evt){
       parent.history.back();
