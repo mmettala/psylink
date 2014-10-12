@@ -1,15 +1,16 @@
 var lastScrollTop = 0;
 
 var word_array = [
-          {text: "Who is your companion", weight: 10},
-          {text: "Trusted advisor", weight: 15},
-          {text: "Has the same chemistry", weight: 6},
-          {text: "Professional", weight: 20},
-          {text: "Easy to talk to", weight: 5},
-          {text: "Understands you", weight: 8},
-          {text: "Collaborative", weight: 5},
-          {text: "Empathetic", weight: 7}
-          // ...as many words as you want
+          {text: "Who is your companion", weight: 15},
+          {text: "Trusted advisor", weight: 20},
+          {text: "Has the same chemistry", weight: 12},
+          {text: "Professional", weight: 25},
+          {text: "Easy to talk to", weight: 9},
+          {text: "Understands you", weight: 13},
+          {text: "Collaborative", weight: 10},
+          {text: "Empathetic", weight: 12},
+          {text: "Friendly", weight: 13},
+          {text: "Person to person", weight: 10}
       ];
 
 
