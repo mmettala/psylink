@@ -144,6 +144,10 @@ a:hover {
 
 }
 
+.tag-cloud-after-right {
+  text-align: right;
+}
+
 .main-section-tag-cloud {
   margin-left: auto;
   margin-right: auto;
